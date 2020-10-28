@@ -1,21 +1,21 @@
-name: 'Invite Snyk user on Issue creation'
-description: 'When a new Github issue is created, and contains some specific text, invite the user who s email is also defined in the issue'
+name: "Invite Snyk user on Issue creation"
+description: "When a new Github issue is created, and contains some specific text, invite the user who's email is also defined in the issue"
 inputs:
   snyk-org-id:
-    description: 'Snyk org id (not the org slug), example 4a18d42f-0706-4ad0-b127-24078731fbed'
+    description: "Snyk org id (not the org slug), example 4a18d42f-0706-4ad0-b127-24078731fbed"
     required: true
   regex-title:
-    description: 'Regular expression used to match titles of Issues that needs to be considered as a trigger'
+    description: "Regular expression used to match titles of Issues that needs to be considered as a trigger"
     required: true
   regex-email:
-    description: 'Regular expression used to match the email adddress of the new Snyk user to be invited to the given org'
+    description: "Regular expression used to match the email adddress of the new Snyk user to be invited to the given org"
     required: true
   regex-checkbox:
-    description: 'Optional regular expression used to match markdown checkbox that will be checked upon successful completion'
+    description: "Optional regular expression used to match markdown checkbox that will be checked upon successful completion"
     required: false
 outputs:
   http-response-code:
-    description: 'HTTP response code returned by the Snyk API'
+    description: "HTTP response code returned by the Snyk API"
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: "node12"
+  main: "index.js"
