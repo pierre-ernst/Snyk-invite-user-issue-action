@@ -17,4 +17,4 @@ jobs:
         regex-title: "Issue Trigger - .+"
         regex-email: "- Email: **([^*]+)**"
     - name: Get the output HTTP response code
-      run: echo "The time was ${{ steps.invite.outputs.http-response-code }}"
+      run: echo "The HTTP response code was ${{ steps.invite.outputs.http-response-code }}"
