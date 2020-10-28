@@ -15,7 +15,7 @@ jobs:
       with:
         snyk-org-id: '4a18d42f-0706-4ad0-b127-24078731fbed'
         regex-title: 'Issue Trigger - .+'
-	regex-email: '- Email: **([^*]+)**'
+	regex-email: '- Email **(*)**'
     - name: Get the output HTTP response code
       run: echo "The time was ${{ steps.invite.outputs.http-response-code }}"
 
