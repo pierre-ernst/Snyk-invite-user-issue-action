@@ -1,5 +1,5 @@
 name: 'Invite Snyk user on Issue creation'
-description: 'When a new Github issue is created, and contains some specific text, invite the user who's email is also defined in the issue'
+description: 'When a new Github issue is created, and contains some specific text, invite the user who\'s email is also defined in the issue'
 inputs:
   snyk-org-id:
     description: 'Snyk org id (not the org slug), example 4a18d42f-0706-4ad0-b127-24078731fbed'
