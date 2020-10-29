@@ -1,7 +1,7 @@
 {
   "name": "Snyk-invite-user-issue-action",
   "version": "0.1.0",
-  "description": "",
+  "description": "GitHub action to invite users to Snyk upon issue creation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"no test specified\" && exit 0"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/pierre-ernst/Snyk-invite-user-issue-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
     "axios": "^0.21.0"
   }
 }
