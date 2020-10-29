@@ -21,6 +21,7 @@ try {
   .catch(function (error) {
     console.log(error);
     core.setOutput("http-response-code", error.response.status);
+    core.setFailed(error.response);
   });
  
   const payload = JSON.stringify(github.context.payload, undefined, 2)
