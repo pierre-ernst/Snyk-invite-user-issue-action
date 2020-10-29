@@ -13,7 +13,7 @@ jobs:
       id: invite
       uses: ./
       with:
-        snyk-org-id: "4a18d42f-0706-4ad0-b127-24078731fbed"
+        snyk-org-id: "3c40230c-a886-49a6-9b57-6e3131dcf16e"
         regex-title: "Issue Trigger - .+"
         regex-email: "- Email: **([^*]+)**"
       env:  
