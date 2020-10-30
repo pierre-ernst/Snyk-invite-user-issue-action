@@ -16,6 +16,7 @@ jobs:
         snyk-org-id: "3c40230c-a886-49a6-9b57-6e3131dcf16e"
         regex-title: "Issue Trigger - .+"
         regex-email: "- Email: \\*\\*\\s*([^\\*]+)\\s*\\*\\*"
+        regex-checkbox: "- \\[ \\] The checkbox"  
       env:  
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}  
     - name: Get the output HTTP response code
