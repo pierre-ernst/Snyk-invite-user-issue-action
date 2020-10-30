@@ -8,7 +8,7 @@ inputs:
     description: "Regular expression used to match titles of Issues that needs to be considered as a trigger"
     required: true
   regex-email:
-    description: "Regular expression used to match the email adddress of the new Snyk user to be invited to the given org"
+    description: "Regular expression used to match the email address of the new Snyk user to be invited to the given org"
     required: true
   regex-checkbox:
     description: "Optional regular expression used to match markdown checkbox that will be checked upon successful completion"
