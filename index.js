@@ -41,7 +41,7 @@ try {
   if ( regexTitle.test(github.context.payload.issue.title) ) {
     const emailMatch = regexEmail.exec(github.context.payload.issue.body);
     if ( emailMatch != null ) {
-      sendInvite(snykOrgId, emailMatch[1]);
+      //sendInvite(snykOrgId, emailMatch[1]);
       
       if ( checkboxPattern != null && checkboxPattern != '' ) {
         const matchedCheckbox = github.context.payload.issue.body.match ( new RegExp(checkboxPattern) );
