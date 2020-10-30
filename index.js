@@ -4,12 +4,18 @@ const axios = require('axios');
 
 try {
   const snykOrgId = core.getInput('snyk-org-id');
-  const regexTitle = core.getInput('regex-title');
-  const regexEmail = core.getInput('regex-email');
-  const regexCheckbox = core.getInput('regex-checkbox');
+  const regexTitle = new RegExp(core.getInput('regex-title'));
+  const regexEmail = new RegExp(core.getInput('regex-email'));
+  const checkboxPattern = core.getInput('regex-checkbox');
   
-  console.log(`title: ${github.context.payload.issue.title}`)
-  console.log(`body: ${github.context.payload.issue.body}`)
+  if ( regexTitle.test(github.context.payload.issue.title) ) {
+    const emailMatch = regexEmail.exec(github.context.payload.issue.body);
+    if ( emailMatch != null ) {
+      console.log(`title: ${github.context.payload.issue.title}`)
+      console.log(`email: ${emailMatch[1]}`)
+    }
+  }
+  
 /*
   axios.defaults.baseURL= 'https://snyk.io/api/v1'; 
   axios.defaults.headers.common['Authorization']= `token ${process.env.SNYK_TOKEN}`; 
