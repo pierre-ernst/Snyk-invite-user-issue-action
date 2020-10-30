@@ -11,8 +11,18 @@ try {
   if ( regexTitle.test(github.context.payload.issue.title) ) {
     const emailMatch = regexEmail.exec(github.context.payload.issue.body);
     if ( emailMatch != null ) {
-      console.log(`title: ${github.context.payload.issue.title}`)
-      console.log(`email: ${emailMatch[1]}`)
+      console.log(`email: ${emailMatch[1]}`);
+      if ( checkboxPattern != null && checkboxPattern != '' ) {
+        const matchedCheckbox = github.context.payload.issue.body.match ( new RegExp(checkboxPattern) );
+        if (matchedCheckbox) {
+          console.log(`matched: ${matchedCheckbox[0]}`)
+          const updatedBody = github.context.payload.issue.body.replace( 
+            matchedCheckbox[0], 
+            matchedCheckbox[0].replace('[ ]', '[x]')
+          );
+          console.log(`body: ${updatedBody}`)
+        }
+      }
     }
   }
   
