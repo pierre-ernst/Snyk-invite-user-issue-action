@@ -25,10 +25,10 @@ function updateIssue(number, body) {
   
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
   octokit.issues.update({
-    repo[0],
-    repo[1],
-    number,
-    body
+    owner: repo[0],
+    repo: repo[1],
+    issue_number: number,
+    body: body
   });
 }
 
