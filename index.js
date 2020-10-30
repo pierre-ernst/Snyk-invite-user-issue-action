@@ -22,7 +22,6 @@ function sendInvite(snykOrgId, email) {
 
 function updateIssue(number, body) {
   const repo = process.env.GITHUB_REPOSITORY.split("/");
-  console.log(repo);
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
   octokit.issues.update({
     owner: repo[0],
